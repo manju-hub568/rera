@@ -22,14 +22,14 @@ app.get('/rera_dataset', async (req, res) => {
 
  // /v1/landdata/rera
 
- app.get('/v1/landdata/rera', async (req,res) => {
+ app.post('/v1/landdata/rera', async (req,res) => {
       try {
 
-           const {proj_name,proj_type,state,district,locality} = req.body;
+           const {project_name,project_type,state,district,locality} = req.body;
 
            const proj_Data = await Rera.find({
-                ["Project Name"]:proj_name,
-                ["Project Type"]:proj_type,
+                ["Project Name"]:project_name,
+                ["Project Type"]:project_type,
                 ["State/UT"]:state,
                 ["District"]:district,
                 ["Locality"]:locality
@@ -43,7 +43,7 @@ app.get('/rera_dataset', async (req, res) => {
 
 // /v1/enteries/rera/
 
-app.get('/v1/enteries/rera/', async (req,res) => {
+app.post('/v1/enteries/rera/', async (req,res) => {
      try {
           const {pin} = req.body;
           const PinCode = await Pin.find({["Pin Code"]:pin});
