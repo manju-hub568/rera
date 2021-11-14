@@ -15,27 +15,40 @@ app.get('/rera_dataset', async (req, res) => {
     try {
          const sData = await Rera.find();
          res.status(201).send(sData);
-    }catch(e) {
+    } catch (e) {
          res.status(400).send(e);
     }
  });
 
  // /v1/landdata/rera
 
- app.get('/v1/landdata/rera', async (req,res) => {
+ app.post('/v1/landdata/rera', async (req,res) => {
       try {
 
-           const {proj_name,proj_type,state,district,locality} = req.body;
-
+           const {project_name,project_type,state,district,locality} = req.body;
+if(project_name !== '' && project_type !== '' && state !== '' && district !== '' && locality !== '') {
            const proj_Data = await Rera.find({
-                ["Project Name"]:proj_name,
-                ["Project Type"]:proj_type,
-                ["State/UT"]:state,
-                ["District"]:district,
-                ["Locality"]:locality
-               });
+                $or: [
+                     {["Project Name"]:project_name},
+                     {["Project Type"]:project_type},
+                     {["State/UT"]:state},
+                     {["District"]:district},
+                     {["locality"]:locality}
+                ]
+           }).limit(1);
            res.status(201).send(proj_Data);
-
+          } else {
+               const proj_Data = await Rera.find({
+                    $or: [
+                         {["Project Name"]:project_name},
+                         {["Project Type"]:project_type},
+                         {["State/UT"]:state},
+                         {["District"]:district},
+                         {["locality"]:locality}
+                    ]
+               });
+               res.status(201).send(proj_Data);               
+          }
       } catch (e) {
            res.status(400).send(e);
       }
@@ -43,7 +56,7 @@ app.get('/rera_dataset', async (req, res) => {
 
 // /v1/enteries/rera/
 
-app.get('/v1/enteries/rera/', async (req,res) => {
+app.post('/v1/enteries/rera/', async (req,res) => {
      try {
           const {pin} = req.body;
           const PinCode = await Pin.find({["Pin Code"]:pin});
