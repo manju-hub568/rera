@@ -4,171 +4,140 @@ const erera = new mongoose.Schema({
     _id: {
         type: String
     },
-
-    ["Aggregate area(In sqmts) of recreational open space"]: {
+    Aggregate_area_In_sqmts_of_recreational_open_space: {
         type: String
     },
-
-    ["Are there any Promoter(Land Owner/ Investor) (as defined by MahaRERA Order) in the project ?"]:{
+    Are_there_any_Promoter_Land_Owner_or_Investor_as_defined_by_MahaRERA_Order_in_the_project_question: {
         type: String
     },
-
-    ["Area(In sqmts)"]: {
+    Area_In_sqmts: {
         type: String
     },
-
-	["Bank Name"]: {
-		type: String
-	},
-    ["Block Number"]: {
+    Bank_Name: {
         type: String
     },
-    ["Boundaries East"]: {
+    Block_Number: {
         type: String
     },
-
-    ["Boundaries North"]: {
+    Boundaries_East: {
         type: String
     },
-
-    ["Boundaries North"]:{
+    Boundaries_North: {
         type: String
     },
-
-    ["Boundaries South"]: {
+    Boundaries_South: {
         type: String
     },
-
-	["Boundaries Wes"]: {
-		type: String
-	},
-    ["Building Name"]: {
+    Boundaries_West: {
         type: String
     },
-    ["Built-up-Area as per Approved FSI (In sqmts)"]: {
+    Building_Name: {
         type: String
     },
-
-    ["Built-up-Area as per Proposed FSI (In sqmts) ( Proposed but not sanctioned) ( As soon as approved, should be immediately updated in Approved FSI)"]: {
+    Built_up_Area_as_per_Approved_FSI_In_sqmts: {
         type: String
     },
-
-    ["Description For Other Type Organization"]:{
+    Built_up_Built_up_Area_as_per_Proposed_FSI_In_sqmts_Proposed_but_not_sanctioned_approved_should_be_immediately_updated_in_Approved_FSI: {
         type: String
     },
-
-    ["District"]: {
+    
+    Description_For_Other_Type_Organization: {
         type: String
     },
-
-	["Division"]: {
-		type: String
-	},
-    ["Do you have any Past Experience ?"]: {
+    District: {
         type: String
     },
-    ["Extended Date of Completion"]: {
+    Division: {
         type: String
     },
-
-    ["Father Full Name"]: {
+    Do_you_have_any_Past_Experience_ques: {
         type: String
     },
-
-    ["House Number"]:{
+    Extended_Date_of_Completion: {
         type: String
     },
-
-    ["District"]: {
+    Father_Full_Name: {
         type: String
     },
-
-	["IFSC Code"]: {
-		type: String
-	},
-    ["Information Type"]: {
+    House_Number: {
         type: String
     },
-    ["Land mark"]: {
+    IFSC_Code: {
         type: String
     },
-
-    ["Last Name"]: {
+    Information_Type: {
         type: String
     },
-
-    ["Litigations related to the project ?"]:{
+    Land_mark: {
         type: String
     },
-
-    ["Locality"]: {
+    Last_Name: {
         type: String
     },
-
-	["Name"]: {
-		type: String
-	},
-    ["Office Number"]: {
+    Litigations_related_to_the_project_Ques: {
         type: String
     },
-    ["Organization Type"]: {
+    Locality: {
         type: String
     },
-
-	["Pin Code"]: {
-		type: String
-	},
-    ["Plot Bearing No / CTS no / Survey Number/Final Plot no"]: {
+    Name: {
         type: String
     },
-    ["Project Name"]: {
+    Office_Number: {
         type: String
     },
-
-	["Project Status"]: {
-		type: String
-	},
-    ["Project Type"]: {
+    Organization_Type: {
         type: String
     },
-    ["Proposed But Not Sanctioned Buildings Count"]: {
+    Pin_Code: {
         type: String
     },
-
-	["Proposed Date of Completion"]: {
-		type: String
-	},
-    ["Revised Proposed Date of Completion"]: {
+    ["Plot_Bearing_No_or_CTS_no_or_Survey_Number_or_Final_Plot_no."]: {
         type: String
     },
-    ["Sanctioned Buildings Count"]: {
+    Project_Name: {
         type: String
     },
-
-	["State/UT"]: {
-		type: String
-	},
-    ["Street"]: {
+    Project_Status: {
         type: String
     },
-    ["Street Name"]: {
+    Project_Type: {
         type: String
     },
-
-	["Taluka"]: {
-		type: String
-	},
-    ["Total Building Count"]: {
+    Proposed_But_Not_Sanctioned_Buildings_Count: {
         type: String
     },
-    ["TotalFSI"]: {
+    Proposed_Date_of_Completion: {
         type: String
     },
-
-	["Village"]: {
-		type: String
-	},
-    ["Website URL"]: {
+    Revised_Proposed_Date_of_Completion: {
+        type: String
+    },
+    Sanctioned_Buildings_Count: {
+        type: String
+    },
+    State_or_UT: {
+        type: String
+    },
+    Street: {
+        type: String
+    },
+    Street_Name: {
+        type: String
+    },
+    Taluka: {
+        type: String
+    },
+    Total_Building_Count: {
+        type: String
+    },
+    TotalFSI: {
+        type: String
+    },
+    Village: {
+        type: String
+    },
+    Website_URL: {
         type: String
     },
 });
