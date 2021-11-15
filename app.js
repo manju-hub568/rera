@@ -26,18 +26,18 @@ app.get('/rera_dataset', async (req, res) => {
       try {
 
            const {project_name,project_type,state,district,locality} = req.body;
-if(project_name !== '' && project_type !== '' && state !== '' && district !== '' && locality !== '') {
-           const proj_Data = await Rera.find({
-                $or: [
-                     {["Project Name"]:project_name},
-                     {["Project Type"]:project_type},
-                     {["State/UT"]:state},
-                     {["District"]:district},
-                     {["locality"]:locality}
-                ]
-           }).limit(1);
-           res.status(201).send(proj_Data);
-          } else {
+// if(project_name !== '' && project_type !== '' && state !== '' && district !== '' && locality !== '') {
+//            const proj_Data = await Rera.find({
+//                 $or: [
+//                      {["Project Name"]:project_name},
+//                      {["Project Type"]:project_type},
+//                      {["State/UT"]:state},
+//                      {["District"]:district},
+//                      {["locality"]:locality}
+//                 ]
+//            }).limit(1);
+//            res.status(201).send(proj_Data);
+//           } else {
                const proj_Data = await Rera.find({
                     $or: [
                          {["Project Name"]:project_name},
@@ -48,7 +48,7 @@ if(project_name !== '' && project_type !== '' && state !== '' && district !== ''
                     ]
                });
                res.status(201).send(proj_Data);               
-          }
+//           }
       } catch (e) {
            res.status(400).send(e);
       }
