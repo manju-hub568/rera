@@ -1,2 +1,2 @@
-version: nodejs
+runtime: nodejs
 env: flex
