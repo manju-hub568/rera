@@ -26,29 +26,20 @@ app.get('/rera_dataset', async (req, res) => {
       try {
 
            const {project_name,project_type,state,district,locality} = req.body;
-// if(project_name !== '' && project_type !== '' && state !== '' && district !== '' && locality !== '') {
-//            const proj_Data = await Rera.find({
-//                 $or: [
-//                      {["Project Name"]:project_name},
-//                      {["Project Type"]:project_type},
-//                      {["State/UT"]:state},
-//                      {["District"]:district},
-//                      {["locality"]:locality}
-//                 ]
-//            }).limit(1);
-//            res.status(201).send(proj_Data);
-//           } else {
+           if(project_name == '' && project_type == '' && state == '' && district == '' && locality == '') {
+                res.status(401).send("Please Fill Any One Field")
+           } else {
                const proj_Data = await Rera.find({
                     $or: [
-                         {["Project Name"]:project_name},
-                         {["Project Type"]:project_type},
-                         {["State/UT"]:state},
-                         {["District"]:district},
-                         {["locality"]:locality}
+                         {Project_Name:project_name},
+                         {Project_Type:project_type},
+                         {State_or_UT:state},
+                         {District:district},
+                         {Locality:locality}
                     ]
                });
-               res.status(201).send(proj_Data);               
-//           }
+               res.status(201).send(proj_Data);  
+           }             
       } catch (e) {
            res.status(400).send(e);
       }
@@ -59,8 +50,12 @@ app.get('/rera_dataset', async (req, res) => {
 app.post('/v1/enteries/rera/', async (req,res) => {
      try {
           const {pin} = req.body;
-          const PinCode = await Pin.find({["Pin Code"]:pin});
+          if(pin == '') {
+               res.status(401).send("Plaese Fill Any One Field")
+          } else {
+          const PinCode = await Pin.find({Pin_Code:pin});
           res.status(201).send(PinCode);
+          }
      } catch (e) {
           res.status(401).send(e);
      }
