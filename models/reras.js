@@ -40,7 +40,6 @@ const erera = new mongoose.Schema({
     Built_up_Built_up_Area_as_per_Proposed_FSI_In_sqmts_Proposed_but_not_sanctioned_approved_should_be_immediately_updated_in_Approved_FSI: {
         type: String
     },
-    
     Description_For_Other_Type_Organization: {
         type: String
     },
@@ -142,7 +141,5 @@ const erera = new mongoose.Schema({
     },
 });
 
-
 const Rera = new mongoose.model('rera', erera);
-
 module.exports = Rera;
