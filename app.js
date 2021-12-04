@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 const port = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+app.use(cors());
 
 require('./db/dbcon');
 
@@ -27,7 +29,7 @@ app.get('/rera_dataset', async (req, res) => {
 
            const {project_name,project_type,state,district,locality} = req.body;
            if(project_name == '' && project_type == '' && state == '' && district == '' && locality == '') {
-                res.status(401).send("Please Fill Any One Field")
+                res.status(401).send("Please Fill Any One Field");
            } else {
                const proj_Data = await Rera.find({
                     $or: [
@@ -51,7 +53,7 @@ app.post('/v1/enteries/rera/', async (req,res) => {
      try {
           const {pin} = req.body;
           if(pin == '') {
-               res.status(401).send("Plaese Fill Any One Field")
+               res.status(401).send("Plaese Fill Any One Field");
           } else {
           const PinCode = await Pin.find({Pin_Code:pin});
           res.status(201).send(PinCode);
@@ -64,3 +66,5 @@ app.post('/v1/enteries/rera/', async (req,res) => {
 app.listen(port, () => {
     console.log(`connected at ${port}`);
 });
+
+// Extra modules
